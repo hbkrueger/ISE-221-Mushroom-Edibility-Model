@@ -8,7 +8,7 @@ data = data.dropna() # remove rows with '?' or any other NaN/NA values
 
 class_mapping = {'e': True, 'p': False} # edible = True, poisonous = False
 
-cols = {
+cols = { # column name: column data
     'cap shape': data['cap-shape'],
     'cap surface': data['cap-surface'],
     'cap color': data['cap-color'],
@@ -33,6 +33,7 @@ cols = {
     'habitat': data['habitat']
 }
 
+# iterate through every column, create heatmap for each
 for col, value in cols.items():
     matrix = pd.crosstab(value, data['class'])
 
