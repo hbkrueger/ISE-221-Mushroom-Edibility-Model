@@ -67,8 +67,8 @@ history1 = model1.fit(X_train,
 
 # =====================================================================
 model3 = Sequential([
-    Dense(5, activation='relu', input_dim=input_dim), # hidden layer 1, 32 nodes w/ relu activation func.
-    Dense(3, activation='relu'), # hidden layer 2, 16 nodes w/ relu activation func.
+    Dense(5, activation='relu', input_dim=input_dim), # hidden layer 1, 5 nodes w/ relu activation func.
+    Dense(3, activation='relu'), # hidden layer 2, 3 nodes w/ relu activation func.
     Dense(1, activation='sigmoid')  # output layer, w/ sigmoid sigmoid func. will output 0 -> 1
 ])
 
