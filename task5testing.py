@@ -6,8 +6,7 @@ import seaborn as sns
 from sklearn.metrics import (
     mean_squared_error, mean_absolute_error,
     accuracy_score, precision_score, f1_score,
-    recall_score,              # <-- added this
-    confusion_matrix
+    recall_score, confusion_matrix
 )
 
 from tensorflow.keras.models import Sequential
@@ -20,7 +19,6 @@ train_df = pd.read_csv("train.csv")
 val_df   = pd.read_csv("val.csv")
 test_df  = pd.read_csv("test.csv")
 
-# your label column is 'class_p'
 target_col = "class_p"
 
 y_train = train_df[target_col].astype(int)
@@ -127,9 +125,9 @@ def evaluate_model(y_true, y_pred):
     mae  = mean_absolute_error(y_true, y_pred)
     acc  = accuracy_score(y_true, y_pred)
     prec = precision_score(y_true, y_pred)
-    rec  = recall_score(y_true, y_pred)     # <-- added recall here
+    rec  = recall_score(y_true, y_pred)
     f1   = f1_score(y_true, y_pred)
-    return mse, mae, acc, prec, rec, f1     # <-- include in return
+    return mse, mae, acc, prec, rec, f1
 
 metrics1 = evaluate_model(y_true, y_pred1)
 metrics2 = evaluate_model(y_true, y_pred2)
